@@ -1,80 +1,54 @@
-# WhisperYT
+# 📝 WhisperYT
 
-WhisperYT is a simple yet powerful command-line tool that leverages OpenAI's Whisper model to transcribe audio from YouTube videos or local audio files. The project generates a text file with a full transcription and detailed timestamps for each dialogue segment.
+Simple CLI tool to transcribe audio from:
 
-## Features
+- YouTube URLs
+- Local audio files
 
-*   **Transcribe from YouTube**: Paste a YouTube video URL to automatically download the audio and transcribe it.
-*   **Transcribe Local Files**: Provide the path to an audio file on your computer to get a transcription.
-*   **Detailed Timestamps**: The output includes a timestamped version of the transcription in a `[mm:ss - mm:ss]` format for easy navigation.
-*   **Full Transcription**: In addition to timestamped segments, the complete, raw text transcription is also provided in a single block.
-*   **Italian Language Support**: Optimized for transcribing audio in the Italian language.
+using OpenAI Whisper.
 
-## Prerequisites
+## ✨ Features
 
-Before you begin, ensure you have the following installed on your system:
+- Automatic YouTube audio download (`yt-dlp`)
+- Timestamped transcript output
+- Full merged transcript output
+- Lightweight single-script workflow
 
-*   **Python 3.8+**
-*   **FFmpeg**: Whisper and yt-dlp require FFmpeg for processing audio files.
-    *   **On Windows**: Download the executable from the [official website](https://ffmpeg.org/download.html) and add the `bin` folder to your system's PATH.
-    *   **On macOS**: You can easily install it with Homebrew: `brew install ffmpeg`
-    *   **On Linux**: Use your distribution's package manager: `sudo apt update && sudo apt install ffmpeg`
+## 📦 Requirements
 
-## Installation
+- Python 3.8+
+- `ffmpeg` installed and available in PATH
 
-1.  **Clone or Download the Repository**
-    If the project is on Git, you can clone it:
-    ```bash
-    git clone https://github.com/AshenClock7613/WhisperYT.git
-    cd WhisperYT
-    ```
-    Alternatively, download the `stt.py` and `requirements.txt` files and save them in a new folder.
+## 🚀 Installation
 
-2.  **Install Dependencies**
-    Install the required Python libraries using the `requirements.txt` file.
-    ```bash
-    pip install -r requirements.txt
-    ```
+```bash
+git clone https://github.com/ashenclock/WhisperYT.git
+cd WhisperYT
+pip install -r requirements.txt
+```
 
-## Usage
-
-Run the script from your command line:
+## ▶️ Usage
 
 ```bash
 python stt.py
 ```
-You will be prompted to enter a source. You can provide either:
 
-1.  **A YouTube video URL**:
-    ```
-    Enter the YouTube video URL or the path to a local audio file: https://www.youtube.com/watch?v=xxxxxxxxxxx
-    ```
+When prompted, provide:
 
-2.  **A path to a local audio file**:
-    ```
-    Enter the YouTube video URL or the path to a local audio file: /path/to/my/audio_file.mp3
-    ```
+- a YouTube link, or
+- a local file path (e.g. `.mp3`, `.wav`, `.m4a`)
 
-The script will display its progress (downloading, transcribing, saving) and, upon completion, will show the path to the `.txt` file containing the transcription.
+## 📄 Output
 
-### Output Example
+The script creates:
 
-When the process is complete, a file named `<original_filename>_transcription.txt` will be created in the same folder as the audio file (or in the `audio/` directory for YouTube links). The file's content will look like this:
+- timestamped segments (`[mm:ss - mm:ss] ...`)
+- full plain-text transcript
 
-```txt
-TRASCRIZIONE CON TIMESTAMP
-==================================================
+in `<input_name>_transcription.txt`.
 
-[00:00 - 00:05] This is the first segment of the transcription.
-[00:06 - 00:10] And this is the second segment, with its timestamp.
-[00:11 - 00:15] Each sentence or portion of speech is separated this way.
+## 🔗 Dependencies
 
-==================================================
-TRASCRIZIONE COMPLETA:
+- [openai-whisper](https://github.com/openai/whisper)
+- [yt-dlp](https://github.com/yt-dlp/yt-dlp)
 
-This is the first segment of the transcription. And this is the second segment, with its timestamp. Each sentence or portion of speech is separated this way.
-```
-## Dependencies
-
-*   [**openai-whisper**](https://github.com/openai/whisper): A robust, state-of-the-art automatic speech recognition (ASR) model.
-*   [**yt-dlp**](https://github.com/yt-dlp/yt-dlp): A fork of `youtube-dl` with additional features and fixes, used for downloading videos from YouTube.
