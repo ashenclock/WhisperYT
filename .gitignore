@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+*.egg
+
+# Logs and databases
+*.log
+*.sqlite3
+
+# IDEs
+.vscode/
+.idea/
+.DS_Store
+
+# Output files
+*.txt
+!requirements.txt
+*.mp3
+*.wav
+*.mp4
