@@ -1,2 +1,2 @@
-whisper==1.1.10
+openai-whisper==20250625
 yt_dlp==2025.7.21

@@ -35,7 +35,7 @@ WhisperYT is a lightweight CLI tool that downloads audio from any YouTube video 
 ```bash
 git clone https://github.com/ashenclock/WhisperYT.git
 cd WhisperYT
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
 ```
 
 ### Usage
